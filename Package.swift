@@ -5,6 +5,9 @@ import PackageDescription
 
 let package = Package(
     name: "WEB_VIEW_LIB",
+    platforms: [
+        .iOS(.v14)
+    ],
     products: [
         // Products define the executables and libraries a package produces, making them visible to other packages.
         .library(
@@ -14,8 +17,11 @@ let package = Package(
     targets: [
         // Targets are the basic building blocks of a package, defining a module or a test suite.
         // Targets can depend on other targets in this package and products from dependencies.
-        .target(
-            name: "WEB_VIEW_LIB"),
-
+        .binaryTarget(
+            name: "WEB_VIEW_LIB",
+            url: "https://github.com/kimleak/WEBVIEW_SDK/releases/download/v1.0.0/WEBVIEW_SDK.xcframework.zip",
+            checksum: "3b0ab98a34e2a00b78d893689e7d9c121b86ff629b4b5b65510b6d5ce502939d"
+        )
+        
     ]
 )
